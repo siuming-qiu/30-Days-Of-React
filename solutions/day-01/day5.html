@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.querySelector('.root')
+        const skills = [
+            ['HTML', 10],
+            ['CSS', 7],
+            ['JavaScript', 9],
+            ['React', 8],
+        ]
+
+        // Skill Component
+        const Skill = ({ skill: [tech, level] }) => (
+            <li>
+                {tech} {level}
+            </li>
+        )
+
+        // Skills Component
+        const Skills = ({ skills }) => {
+            console.log(skills)
+            const skillsList = skills.map((skill) => <Skill skill={skill} />)
+            console.log(skillsList)
+            return <ul>{skillsList}</ul>
+        }
+
+        const App = () => {
+            return (
+                <div className='container'>
+                    <div>
+                        <h1>Skills Level</h1>
+                        <Skills skills={skills} />
+                    </div>
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, root)
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            text-align: center;
+            font-size: 30px;
+        }
+        li {
+            display: flex;
+            list-style: none;
+            background-color: #fff;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        ul {
+            display: grid;
+            width: 70%;
+            margin: 10px auto;
+            padding: 0;
+            grid-template-columns: repeat(8,80px);
+            grid-template-rows: repeat(4, 80px);
+            gap: 2px 2px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.querySelector('.root')
+        const Header = () => {
+            return (
+                <header>30 Days Of React</header>
+            )
+        }
+        const arr = Array(32).fill(0).map((item, index) => item = index)
+        const isPrime = number => {
+            if(number < 2) return false
+            let upper = Math.sqrt(number) >> 0
+            for(let i = 2; i <= upper; i++) {
+                if(number % i === 0) return false
+            }
+            return true
+        }
+        const Item = ({number}) => {
+            const bgc = isPrime(number) ? '#fd5e53' : (number % 2 === 1 ? '#fddb3a' : '#21bf73')
+            return (
+                <li style={{ backgroundColor: bgc, color: 'white' }}>{number}</li>
+            )
+        }
+        const Items = ({arr}) => {
+            return (
+                <ul>
+                    {arr.map( number => {
+                        return <Item number = {number}/>
+                    })}
+                </ul>
+            )
+        }
+        const App = () => {
+            return (
+                <div className='container'>
+                    <Header/>
+                    <Items arr = {arr}/>
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, root)
+    </script>
+</body>
+</html>
