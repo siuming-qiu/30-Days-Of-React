@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+            padding: 4px;
+            height: 30px;
+            min-width: 40px;
+            line-height: 22px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #2acfcf;
+            color: #fff;
+            margin-right: 16px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            width: 80%;
+        }
+        .title {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.querySelector('.root')
+        const skills = ['HMML', 'CSS', 'Sass', 'JS', 'React', 'Redux', 'Node', 'MongoDB', 'Python', 'Flask', 'Django', 'Numpy', 'Pandas', 'Data Analysis', 'MYSQL', 'GraphQL', 'D3.js', 'Gatsby', 'Docker', 'Heroku', 'Git']
+        const header = (
+            <header>
+                SKILLS
+            </header>
+        )
+        const ul = (
+            <ul>
+                {skills.map(skill => <li key={skill}>{skill}</li>)}
+            </ul>
+        )
+        const main = (
+            <main>
+                {ul}
+            </main>
+        )
+        const footer = (
+            <footer>
+                <p>March 10, 2022</p>
+            </footer>
+        )
+        const app = (
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>
+        )
+        ReactDOM.render(app, root)
+    </script>
+</body>
+</html>
