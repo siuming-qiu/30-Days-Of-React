@@ -1,0 +1,104 @@
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+* {
+    box-sizing: border-box;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+}
+.title {
+    color: #ffa500;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.description {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+}
+.tip {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222
+}
+.search {
+    display: block;
+    margin: 20px auto;
+    width: 40%;
+    height: 60px;
+    border-radius: 30px;
+    border: 2px solid #f8e7e7;
+    background-color: #faf6f6;
+    outline: none;
+    padding-left: 40px;
+    font-size: 24px;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-size: 28px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 30%;
+    min-width: 400px;
+    padding: 20px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: transform 1s;
+}
+.card:hover {
+    box-shadow:  0 0 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+    transition: transform 0.5s;
+}
+.flag {
+    margin: 20px 0 30px;
+    width: 60%;
+    height: 140px;
+    box-shadow: 0 0 20px rgba(133, 42, 42, 0.4);
+}
+.countryName {
+    color: #ffa600;
+}
+.card ul {
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+.card ul li {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #888;
+}
+
+.card ul li span:nth-child(1) {
+    font-weight: bold;
+    color: #444;
+}
